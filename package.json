@@ -1,13 +1,16 @@
 {
   "name": "femow-brain-games",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "brain-games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
   "author": "Sergey Suslov",
   "license": "ISC",
-  "keywords": ["brain", "games"],
+  "keywords": [
+    "brain",
+    "games"
+  ],
   "files": [
     "dist"
   ],
