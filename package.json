@@ -1,8 +1,13 @@
 {
   "name": "femow-brain-games",
   "version": "1.0.3",
-  "description": "",
-  "main": "index.js",
+  "description": "brain-games",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "author": "Sergey Suslov",
+  "license": "ISC",
+  "keywords": ["brain", "games"],
   "files": [
     "dist"
   ],
@@ -10,18 +15,13 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.2.3"
-  },
-  "bin": {
-    "brain-games": "dist/bin/brain-games.js"
-  },
-  "dependencies": {
-    "readline-sync": "^1.4.9"
   }
 }
