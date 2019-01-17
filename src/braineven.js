@@ -1,30 +1,33 @@
 import readlineSync from 'readline-sync';
 
+const isEven = num => num % 2 === 0;
+const countRounds = 3;
+
 const answerIsEven = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no"\n');
+  const greetingUser = '\nWelcome to the Brain Games!';
+  const description = 'Answer "yes" if number even otherwise answer "no".\n';
+  console.log(greetingUser);
+  console.log(description);
+
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
-  for (let i = 0; i < 3; i += 1) {
-    const randomNum = Math.floor(Math.random() * 100);
-    const checkRandomNum = (randomNum % 2 === 0) ? 'yes' : 'no';
-    console.log(`Question: ${randomNum}`);
+
+  for (let i = 0; i < countRounds; i += 1) {
+    const questionGame = Math.floor(Math.random() * 100);
+
+    const checkQuestionGame = isEven(questionGame) ? 'yes' : 'no';
+    console.log(`Question: ${questionGame}`);
+
     const userAsk = readlineSync.question('Your answer: ');
-    if (userAsk === checkRandomNum) {
-      console.log('Correct!');
-    } else if (userAsk === 'yes' && checkRandomNum === 'no') {
-      console.log(`${userAsk} is wrong answer ;(. Correct answer was ${checkRandomNum}.`);
-      return console.log('Let"s try again, Bill!');
-    } else if (userAsk === 'no' && checkRandomNum === 'yes') {
-      console.log(`${userAsk} is wrong answer ;(. Correct answer was ${checkRandomNum}.`);
-      return console.log('Let"s try again, Bill!');
-    } else if (userAsk !== checkRandomNum) {
-      console.log(`${userAsk} is wrong answer ;(. Correct answer was ${checkRandomNum}.`);
+
+    if (userAsk !== checkQuestionGame) {
+      console.log(`${userAsk} is wrong answer ;(. Correct answer was ${checkQuestionGame}.`);
       console.log('Let"s try again, Bill!');
-      return console.log('Let"s try again, Bill!');
+      return;
     }
+    console.log('Correct!');
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default answerIsEven;
