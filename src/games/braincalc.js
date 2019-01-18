@@ -1,12 +1,12 @@
 import { cons } from 'hexlet-pairs';
-import engineGame from '../index';
-
+import engineGame from '..';
+import generateNum from '../utils';
 
 const description = 'What is the result of the expression?\n';
 
 const game = () => {
-  const generateNumberOne = Math.floor(Math.random() * 100);
-  const generateNumberTwo = Math.floor(Math.random() * 100);
+  const generateNumberOne = generateNum(2, 10);
+  const generateNumberTwo = generateNum(2, 10);
   const generateSign = Math.floor(Math.random() * 3) + 1;
 
   let question = '';
@@ -21,11 +21,10 @@ const game = () => {
       correctAnswer = generateNumberOne - generateNumberTwo;
       question = `${generateNumberOne} - ${generateNumberTwo}`;
       break;
-    case 3:
+    default:
       correctAnswer = generateNumberOne * generateNumberTwo;
       question = `${generateNumberOne} * ${generateNumberTwo}`;
       break;
-        // no default
   }
   return cons(question, correctAnswer);
 };

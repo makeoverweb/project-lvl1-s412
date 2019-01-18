@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import description from '../games/braineven';
+import game from '../games/braineven';
 
-description();
+game();

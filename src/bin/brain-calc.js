@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import description from '../games/braincalc';
+import game from '../games/braincalc';
 
-description();
+game();
