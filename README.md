@@ -5,3 +5,5 @@
 [![asciicast](https://asciinema.org/a/1uFwlgQB2PYsRkRElzjslsZE6.svg)](https://asciinema.org/a/1uFwlgQB2PYsRkRElzjslsZE6)
 ## Console game brain-calc
 [![asciicast](https://asciinema.org/a/ebIcb1YJHXwayFHu3ggoqmR1L.svg)](https://asciinema.org/a/ebIcb1YJHXwayFHu3ggoqmR1L)
+## Console game brain-gcd
+[![asciicast](https://asciinema.org/a/rq5OJXVcsoSPmzRiIPmU4gIPu.svg)](https://asciinema.org/a/rq5OJXVcsoSPmzRiIPmU4gIPu)
