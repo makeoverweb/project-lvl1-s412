@@ -14,7 +14,7 @@ const engineGame = (description, game) => {
     const dataGame = game();
     const question = car(dataGame);
     const answer = readlineSync.question(`Question: ${question} `);
-    const correctAnswer = String(cdr(dataGame));
+    const correctAnswer = cdr(dataGame);
     console.log(`Your answer: ${answer}`);
 
     if (answer !== correctAnswer) {

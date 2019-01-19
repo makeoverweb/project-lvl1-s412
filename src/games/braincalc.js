@@ -7,22 +7,22 @@ const description = 'What is the result of the expression?\n';
 const game = () => {
   const generateNumberOne = generateNum(2, 10);
   const generateNumberTwo = generateNum(2, 10);
-  const generateSign = Math.floor(Math.random() * 3) + 1;
+  const generateSign = generateNum(1, 3);
 
   let question = '';
   let correctAnswer = '';
 
   switch (generateSign) {
     case 1:
-      correctAnswer = generateNumberOne + generateNumberTwo;
+      correctAnswer = String(generateNumberOne + generateNumberTwo);
       question = `${generateNumberOne} + ${generateNumberTwo}`;
       break;
     case 2:
-      correctAnswer = generateNumberOne - generateNumberTwo;
+      correctAnswer = String(generateNumberOne - generateNumberTwo);
       question = `${generateNumberOne} - ${generateNumberTwo}`;
       break;
     default:
-      correctAnswer = generateNumberOne * generateNumberTwo;
+      correctAnswer = String(generateNumberOne * generateNumberTwo);
       question = `${generateNumberOne} * ${generateNumberTwo}`;
       break;
   }
