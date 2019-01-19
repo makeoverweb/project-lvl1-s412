@@ -5,7 +5,7 @@ import generateNum from '../utils';
 const description = 'What number is missing in the progression?\n';
 
 const game = () => {
-  const generateNumberOne = generateNum(1, 50);
+  const generateFirst = generateNum(1, 50);
   const generateStep = generateNum(2, 5);
   const generatePosition = generateNum(1, 9);
 
@@ -29,8 +29,8 @@ const game = () => {
     return cons(result1, result3);
   };
 
-  const question = String(car(numberSteps(generateNumberOne, generateStep, generatePosition)));
-  const correctAnswer = String(cdr(numberSteps(generateNumberOne, generateStep, generatePosition)));
+  const question = String(car(numberSteps(generateFirst, generateStep, generatePosition)));
+  const correctAnswer = String(cdr(numberSteps(generateFirst, generateStep, generatePosition)));
 
 
   return cons(question, correctAnswer);
