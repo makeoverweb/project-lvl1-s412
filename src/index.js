@@ -4,11 +4,11 @@ import { car, cdr } from 'hexlet-pairs';
 const countRounds = 3;
 
 const engineGame = (description, game) => {
-  console.log('Welcome to the Brain Games!\n');
+  console.log('\nWelcome to the Brain Games!');
   console.log(description);
 
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  const userName = readlineSync.question('\nMay I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
 
   for (let i = 0; i < countRounds; i += 1) {
     const dataGame = game();
@@ -19,7 +19,7 @@ const engineGame = (description, game) => {
 
     if (answer !== correctAnswer) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      console.log('Let"s try again, Bill!');
+      console.log(`Let"s try again, ${userName}!`);
       return;
     }
     console.log('Correct!');

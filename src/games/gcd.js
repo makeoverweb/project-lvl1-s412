@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engineGame from '..';
 import generateNum from '../utils';
 
-const description = 'Find the greatest common divisor of given numbers.\n';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const game = () => {
   const generateNumberOne = generateNum(1, 50);

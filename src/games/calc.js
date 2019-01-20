@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engineGame from '..';
 import generateNum from '../utils';
 
-const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
 const game = () => {
   const generateNumberOne = generateNum(2, 10);
