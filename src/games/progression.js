@@ -2,7 +2,7 @@ import { cons, car, cdr } from 'hexlet-pairs';
 import engineGame from '..';
 import generateNum from '../utils';
 
-const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?\n';
 
 const game = () => {
   const startPoint = generateNum(1, 50);
@@ -23,7 +23,6 @@ const game = () => {
         result += `${miss} ${sumOfSteps}`;
       }
       sumOfSteps += steps;
-      iter += 1;
     }
     return cons(result, colonPosition);
   };
