@@ -2,34 +2,32 @@ import { cons, car, cdr } from 'hexlet-pairs';
 import engineGame from '..';
 import generateNum from '../utils';
 
-const description = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?';
+
+const numberOfSteps = (start, step, hidden) => {
+  const colon = ':';
+  const miss = ' ';
+  const roundsLength = 10;
+  let result = ' ';
+  const colonPosition = start + step * hidden;
+
+  for (let iter = 1; iter < roundsLength; iter += 1) {
+    if (iter === hidden) {
+      result += `${miss} ${colon}`;
+    } else {
+      result += `${miss} ${start + iter * step}`;
+    }
+  }
+  return cons(result, colonPosition);
+};
 
 const game = () => {
   const startPoint = generateNum(1, 50);
-  const step = generateNum(2, 5);
+  const progresStep = generateNum(2, 5);
   const hiddenElemntPosition = generateNum(1, 9);
 
-  const isPrime = (start, steps, hidden) => {
-    let result = String(start);
-    let sumOfSteps = Number(result) + steps;
-    let colonPosition = 0;
-    const colon = ':';
-    const miss = ' ';
-    for (let iter = 1; iter < 10; iter += 1) {
-      if (iter === hidden) {
-        result += `${miss} ${colon}`;
-        colonPosition = sumOfSteps;
-      } else {
-        result += `${miss} ${sumOfSteps}`;
-      }
-      sumOfSteps += steps;
-    }
-    return cons(result, colonPosition);
-  };
-
-  const question = String(car(isPrime(startPoint, step, hiddenElemntPosition)));
-  const correctAnswer = String(cdr(isPrime(startPoint, step, hiddenElemntPosition)));
-
+  const question = String(car(numberOfSteps(startPoint, progresStep, hiddenElemntPosition)));
+  const correctAnswer = String(cdr(numberOfSteps(startPoint, progresStep, hiddenElemntPosition)));
   return cons(question, correctAnswer);
 };
 
