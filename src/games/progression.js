@@ -1,33 +1,35 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import engineGame from '..';
 import generateNum from '../utils';
 
 const description = 'What number is missing in the progression?';
+const lengthProgression = 10;
+const minStartPoint = 1;
+const maxStartPoint = 50;
+const minProgresStep = 2;
+const maxProgresStep = 2;
 
-const numberOfSteps = (start, step, hidden) => {
-  const colon = ':';
-  const miss = ' ';
-  const roundsLength = 10;
-  let result = ' ';
-  const colonPosition = start + step * hidden;
-
-  for (let iter = 1; iter < roundsLength; iter += 1) {
+const getProgression = (start, step, hidden) => {
+  const colon = ' ..';
+  let result = '';
+  for (let iter = 1; iter <= lengthProgression; iter += 1) {
     if (iter === hidden) {
-      result += `${miss} ${colon}`;
+      result += `${colon}`;
     } else {
-      result += `${miss} ${start + iter * step}`;
+      result += ` ${start + iter * step}`;
     }
   }
-  return cons(result, colonPosition);
+  return result;
 };
 
 const game = () => {
-  const startPoint = generateNum(1, 50);
-  const progresStep = generateNum(2, 5);
-  const hiddenElemntPosition = generateNum(1, 9);
+  const startPoint = generateNum(minStartPoint, maxStartPoint);
+  const progresStep = generateNum(minProgresStep, maxProgresStep);
+  const hiddenElemntPosition = generateNum(minStartPoint, lengthProgression);
+  const progressionNumber = String(getProgression(startPoint, progresStep, hiddenElemntPosition));
 
-  const question = String(car(numberOfSteps(startPoint, progresStep, hiddenElemntPosition)));
-  const correctAnswer = String(cdr(numberOfSteps(startPoint, progresStep, hiddenElemntPosition)));
+  const question = String(progressionNumber);
+  const correctAnswer = String(startPoint + progresStep * hiddenElemntPosition);
   return cons(question, correctAnswer);
 };
 

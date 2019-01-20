@@ -3,21 +3,24 @@ import engineGame from '..';
 import generateNum from '../utils';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const minGenerateNum = 2;
+const maxGenerateNum = 500;
+
 const isPrime = (num) => {
-  let iter = 2;
-  while (iter < num) {
-    if (num <= 1) {
-      return false;
-    } if (num % iter === 0) {
+  if (num < minGenerateNum) {
+    return false;
+  }
+  for (let iter = 2; iter < Math.sqrt(num); iter += 1) {
+    if (num % iter === 0) {
       return false;
     }
-    iter += 1;
   }
   return true;
 };
 
 const game = () => {
-  const anyNum = generateNum(2, 500);
+  const anyNum = generateNum(minGenerateNum, maxGenerateNum);
 
   const question = `${anyNum}`;
   const correctAnswer = isPrime(question) ? 'yes' : 'no';

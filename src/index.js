@@ -13,9 +13,9 @@ const engineGame = (description, game) => {
   for (let i = 0; i < countRounds; i += 1) {
     const dataGame = game();
     const question = car(dataGame);
-    const answer = readlineSync.question(`Question: ${question} `);
     const correctAnswer = cdr(dataGame);
-    console.log(`Your answer: ${answer}`);
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer !== correctAnswer) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
@@ -26,6 +26,5 @@ const engineGame = (description, game) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-
 
 export default engineGame;
