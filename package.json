@@ -1,6 +1,6 @@
 {
   "name": "femow-brain-games",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "brain-games",
   "bin": {
     "brain-prime": "dist/bin/brain-prime.js",
