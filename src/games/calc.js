@@ -18,19 +18,19 @@ const game = () => {
 
   switch (generateSign) {
     case 1:
-      correctAnswer = String(generateNumberOne + generateNumberTwo);
+      correctAnswer = generateNumberOne + generateNumberTwo;
       question = `${generateNumberOne} + ${generateNumberTwo}`;
       break;
     case 2:
-      correctAnswer = String(generateNumberOne - generateNumberTwo);
+      correctAnswer = generateNumberOne - generateNumberTwo;
       question = `${generateNumberOne} - ${generateNumberTwo}`;
       break;
     default:
-      correctAnswer = String(generateNumberOne * generateNumberTwo);
+      correctAnswer = generateNumberOne * generateNumberTwo;
       question = `${generateNumberOne} * ${generateNumberTwo}`;
       break;
   }
-  return cons(question, correctAnswer);
+  return cons(question, String(correctAnswer));
 };
 
 export default () => engineGame(description, game);
