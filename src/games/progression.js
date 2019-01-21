@@ -6,31 +6,27 @@ const description = 'What number is missing in the progression?';
 const lengthProgression = 10;
 const minStartPoint = 1;
 const maxStartPoint = 50;
-const minProgresStep = 2;
-const maxProgresStep = 2;
+const minStep = 1;
+const maxStep = 15;
 
 const getProgression = (start, step, hidden) => {
-  const colon = ' ..';
   let result = '';
-  for (let iter = 1; iter <= lengthProgression; iter += 1) {
-    if (iter === hidden) {
-      result += `${colon}`;
-    } else {
-      result += ` ${start + iter * step}`;
-    }
+  const length = 10;
+  for (let iter = 0; iter < length; iter += 1) {
+    result += (iter === hidden) ? '.. ' : `${start + iter * step} `;
   }
   return result;
 };
 
 const game = () => {
   const startPoint = generateNum(minStartPoint, maxStartPoint);
-  const progresStep = generateNum(minProgresStep, maxProgresStep);
-  const hiddenElemntPosition = generateNum(minStartPoint, lengthProgression);
-  const progressionNumber = String(getProgression(startPoint, progresStep, hiddenElemntPosition));
+  const progressionStep = generateNum(minStep, maxStep);
+  const hiddenElemntPosition = generateNum(0, lengthProgression - 1);
+  const newProgression = String(getProgression(startPoint, progressionStep, hiddenElemntPosition));
 
-  const question = String(progressionNumber);
-  const correctAnswer = String(startPoint + progresStep * hiddenElemntPosition);
-  return cons(question, correctAnswer);
+  const question = String(newProgression);
+  const correctAnswer = String(startPoint + progressionStep * hiddenElemntPosition);
+  return cons(question.trim(), correctAnswer);
 };
 
 export default () => engineGame(description, game);

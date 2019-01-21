@@ -3,15 +3,15 @@ import engineGame from '..';
 import generateNum from '../utils';
 
 const description = 'What is the result of the expression?';
-const minGenerateNumberOne = 2;
-const maxGenerateNumberOne = 10;
-const mingenerateSign = 1;
-const maxgenerateSign = 3;
+const minGenerateNum = 1;
+const maxGenerateNum = 10;
+const minGenerateSign = 1;
+const maxGenerateSign = 3;
 
 const game = () => {
-  const generateNumberOne = generateNum(minGenerateNumberOne, maxGenerateNumberOne);
-  const generateNumberTwo = generateNum(minGenerateNumberOne, maxGenerateNumberOne);
-  const generateSign = generateNum(mingenerateSign, maxgenerateSign);
+  const generateNumberOne = generateNum(minGenerateNum, maxGenerateNum);
+  const generateNumberTwo = generateNum(minGenerateNum, maxGenerateNum);
+  const generateSign = generateNum(minGenerateSign, maxGenerateSign);
 
   let question = '';
   let correctAnswer = '';

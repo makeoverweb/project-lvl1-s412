@@ -4,14 +4,14 @@ import generateNum from '../utils';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const minGenerateNum = 2;
+const minGenerateNum = 1;
 const maxGenerateNum = 500;
 
 const isPrime = (num) => {
-  if (num < minGenerateNum) {
+  if (num <= 1) {
     return false;
   }
-  for (let iter = 2; iter < Math.sqrt(num); iter += 1) {
+  for (let iter = 2; iter <= Math.sqrt(num); iter += 1) {
     if (num % iter === 0) {
       return false;
     }
